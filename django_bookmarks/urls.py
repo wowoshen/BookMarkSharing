@@ -1,10 +1,13 @@
 from django.conf.urls import patterns, include, url
-
+from bookmarks.views import *
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+	(r'^$', main_page),
+	(r'^user/(\w+)/$', user_page), 
+	(r'^login/$', 'django.contrib.auth.views.login'),
     # Examples:
     # url(r'^$', 'django_bookmarks.views.home', name='home'),
     # url(r'^django_bookmarks/', include('django_bookmarks.foo.urls')),
